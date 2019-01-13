@@ -21,6 +21,11 @@ public class DireccionIP {
         return octeto;
     }
 
+    public static char getCategoriaIP(){
+
+        return ;
+    }
+
     public DireccionIP(String cadena){
 
     }
