@@ -1,10 +1,11 @@
 public class DireccionIP {
     private int[] octetos=new int[4];
     private char categoriaIP;
+    private int[] mascaraRed=new int[4];
 
-    public int[] getOctetos(){
+    public int[] getOctetos(String direccionIP){
         int[] octeto=new int[4];
-        String cadenaIntroducida="192.168.0.1";
+        String cadenaIntroducida="";
         int posicionSalida=0;
         int posicionPuntos=0;
         int posicionArray=0;
@@ -23,20 +24,33 @@ public class DireccionIP {
     }
 
     public char getCategoriaIP(){
-        if(this.octetos[0]==10){
+        if(this.octetos[0]<128){
             categoriaIP='A';
         }
-        if(this.octetos[0]==172){
+        if(this.octetos[0]>=128 && this.octetos[0]<192){
             categoriaIP='B';
         }
-        if(this.octetos[0]==192) {
+        if(this.octetos[0]>=192 && this.octetos[0]<224) {
             categoriaIP='C';
         }
         return categoriaIP;
     }
 
-    public DireccionIP(String cadena){
+    public int[] getMascaraRed(){
+        if(categoriaIP=='A'){
+            int[] mascaraRed={255,0,0,0};
+        }
+        if(categoriaIP=='B'){
+            int[] mascaraRed={255,255,0,0};
+        }
+        if(categoriaIP=='C'){
+            int[] mascaraRed={255,255,255,0};
+        }
+        return mascaraRed;
+    }
 
+    public DireccionIP(String direccionIP){
+        this.octetos=getOctetos(direccionIP);
     }
 
     public DireccionIP(int octeto1,int octeto2,int octeto3,int octeto4){
