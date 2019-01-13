@@ -1,5 +1,6 @@
 public class DireccionIP {
     private int[] octetos=new int[4];
+    private char categoriaIP;
 
     public int[] getOctetos(){
         int[] octeto=new int[4];
@@ -21,9 +22,17 @@ public class DireccionIP {
         return octeto;
     }
 
-    public static char getCategoriaIP(){
-
-        return ;
+    public char getCategoriaIP(){
+        if(this.octetos[0]==10){
+            categoriaIP='A';
+        }
+        if(this.octetos[0]==172){
+            categoriaIP='B';
+        }
+        if(this.octetos[0]==192) {
+            categoriaIP='C';
+        }
+        return categoriaIP;
     }
 
     public DireccionIP(String cadena){
