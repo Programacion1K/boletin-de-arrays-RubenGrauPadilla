@@ -98,6 +98,16 @@ public class DireccionIP {
         return idRed;
     }
 
+    public String infoIP(){
+        String salida="";
+
+        salida+="Dirección IP: "+this.toString()+"/n"+
+                "Máscara de red: "+this.getMascaraRed()+"/n"+
+                "Categoría de la IP: "+this.getCategoriaIP()+"/n"+
+                "ID de red: "+this.getIdRed();
+        return salida;
+    }
+
     public DireccionIP(String direccionIP){
         this.octetos=obtenerOctetos(direccionIP);
         this.mascaraRed=obtenerMascaraRed(direccionIP);
