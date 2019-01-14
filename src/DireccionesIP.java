@@ -27,3 +27,9 @@
 //        return this.octetos[0]+"."+this.octetos[0]+"."+this.octetos[0]+"."+this.octetos[0];
 //    }
 //}
+//public static boolean sonIguales(IP uno,IP dos){
+//    return(uno.octetos[0]==dos.octetos[0] &&
+//        uno.octetos[1]==dos.octetos[1] &&
+//        uno.octetos[2]==dos.octetos[2] &&
+//        uno.octetos[3]==dos.octetos[3] &&)
+//        }
